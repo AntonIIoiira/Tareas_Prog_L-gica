@@ -1,4 +1,12 @@
-module FizzBuzz where
+{-|
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+-}
+module Main where
 
 ifThenElse :: Bool -> a -> a -> a
 ifThenElse cond thenVal elseVal =
@@ -29,10 +37,11 @@ tens n
             answers = words  "twenty thirty forty fifty sixty seventy eighty ninety"
 
 number :: Int -> String
-
 number n 
-
     | n >= 1 && n < 20 = lessThan20 n
     | n `mod` 10 == 0 && n < 100 = tens (n `div` 10) 
     | n < 100  = tens (n `div` 10) ++ if n `mod` 10 /= 0 then " " ++ lessThan20 (n `mod` 10) else ""
     | n == 100 = "One Hundred!"
+
+main :: IO ()
+main = mapM_ (putStrLn . fizzbuzz) [1..100]
